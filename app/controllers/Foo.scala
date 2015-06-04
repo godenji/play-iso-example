@@ -3,7 +3,6 @@ package controllers
 import play.api._
 import play.api.mvc._
 
-import playiso.macros._
 import com.foo.model.{Foo=> Model}
 import com.foo.model.key.FooId
 
