@@ -17,6 +17,9 @@ illustrates setup for a *non-Slick* Play 2.4 project.
 
 Required bits in your `build.scala(.sbt)`:
 
+    import play.sbt.routes.RoutesKeys.routesImport
+    ...
+
     libraryDependencies += "play-iso" %% "play-iso" % "1.0",
     routesImport ++= Seq(
       "playiso.RouteBindable._",
