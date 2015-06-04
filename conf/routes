@@ -1,0 +1,2 @@
+GET /foo/:id controllers.Foo.show(id: FooId)
+GET /foo controllers.Foo.optional(maybeFoo: Option[FooId] ?= None)
