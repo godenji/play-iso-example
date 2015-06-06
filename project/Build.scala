@@ -6,14 +6,14 @@ import play.sbt.routes.RoutesKeys.routesImport
 object ApplicationBuild extends Build {
   lazy val root = (project in file(".")).settings(
     name := "play-iso-example",
-    version := "1.0",
+    version := "1.1",
     scalaVersion := "2.11.6",
     routesImport ++= Seq(
-      "playiso.RouteBindable._",
+      "playiso.macros.MappedToBase._", "playiso.bind.Route._",
       "com.foo.model.key._"
     ),
     libraryDependencies ++= Seq(
-      "play-iso" %% "play-iso" % "1.0",
+      "play-iso" %% "play-iso" % "1.1",
       "org.scalatest" %% "scalatest" % "2.2.1" % "test",
       "org.scalatestplus" %% "play" % "1.4.0-M3" % "test"
     ),

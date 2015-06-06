@@ -24,7 +24,7 @@ trait FooController {self:Controller=>
 trait FooForm{
   object FooForm{
     import play.api.data._, Forms._, format.Formats._
-    import playiso.FormBindable._
+    import playiso.macros.MappedToBase._, playiso.bind.Form._
     
     val mapper = mapping(
       "id"  -> of[FooId],
