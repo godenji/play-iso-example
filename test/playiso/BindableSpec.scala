@@ -16,7 +16,7 @@ class RouteBindableSpec extends PlaySpec with Results {
       val controller = new Subject()
       val res = controller.show(FooId(3)).apply(FakeRequest())
       val text: String = contentAsString(res)
-      text mustBe "FooId has value 3"
+      text mustBe "FooId has value FooId(3)"
     }
   }
   "Foo > optional" should {
@@ -27,7 +27,7 @@ class RouteBindableSpec extends PlaySpec with Results {
         apply(FakeRequest())
         
       val text: String = contentAsString(res)
-      text mustBe "FooId has value Some(3)"
+      text mustBe "FooId has value Some(FooId(3))"
     }
   }
 }

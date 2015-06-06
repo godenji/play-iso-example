@@ -5,25 +5,27 @@ import play.sbt.routes.RoutesKeys.routesImport
 
 object ApplicationBuild extends Build {
   lazy val root = (project in file(".")).settings(
-    name := "play-iso-example",
-    version := "1.0",
+    name := "play-iso-example-slick",
+    version := "1.1",
     scalaVersion := "2.11.6",
     routesImport ++= Seq(
-      "playiso.RouteBindable._",
+      "playiso.macros.MappedToBase._", "playiso.bind.Route._",
       "com.foo.model.key._"
     ),
     libraryDependencies ++= Seq(
-      "play-iso" %% "play-iso" % "1.0",
+      "play-iso-slick" %% "play-iso-slick" % "1.1",
       "org.scalatest" %% "scalatest" % "2.2.1" % "test",
-      "org.scalatestplus" %% "play" % "1.4.0-M3" % "test"
+      "org.scalatestplus" %% "play" % "1.4.0-M3" % "test",
+      "com.typesafe.slick" %% "slick" % "3.0.0",
+      "org.slf4j" % "slf4j-nop" % "1.6.4"
     ),
     resolvers ++= Seq(
       Resolver.file(
-        "play-iso local", 
+        "play-iso-slick local", 
         file(s"${Path.userHome.absolutePath}/.ivy2/local/play-iso")
       )(Resolver.ivyStylePatterns),
       Resolver.url(
-        "play-iso remote", 
+        "play-iso-slick remote", 
         url("https://github.com/godenji/play-iso/releases/")
       )(Resolver.ivyStylePatterns)
     )
