@@ -22,11 +22,11 @@ object ApplicationBuild extends Build {
     resolvers ++= Seq(
       Resolver.file(
         "play-iso-slick local", 
-        file(s"${Path.userHome.absolutePath}/.ivy2/local/play-iso")
+        file(s"${Path.userHome.absolutePath}/.ivy2/local/play-iso-slick")
       )(Resolver.ivyStylePatterns),
       Resolver.url(
-        "play-iso-slick remote", 
-        url("https://github.com/godenji/play-iso/releases/")
+        "play-iso-slick remote",
+        url("https://github.com/godenji/play-iso/tree/slick-3.0/releases/")
       )(Resolver.ivyStylePatterns)
     )
   ).enablePlugins(play.sbt.PlayScala)
