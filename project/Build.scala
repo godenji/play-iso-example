@@ -14,6 +14,7 @@ object ApplicationBuild extends Build {
     ),
     libraryDependencies ++= Seq(
       "play-iso-slick" %% "play-iso-slick" % "1.1",
+      "play-iso-build-slick" %% "play-iso-build-slick" % "1.1",
       "org.scalatest" %% "scalatest" % "2.2.1" % "test",
       "org.scalatestplus" %% "play" % "1.4.0-M3" % "test",
       "com.typesafe.slick" %% "slick" % "3.0.0",
@@ -26,7 +27,7 @@ object ApplicationBuild extends Build {
       )(Resolver.ivyStylePatterns),
       Resolver.url(
         "play-iso-slick remote",
-        url("https://github.com/godenji/play-iso/tree/slick-3.0/releases/")
+        url("https://raw.githubusercontent.com/godenji/play-iso/slick-3.0/releases/")
       )(Resolver.ivyStylePatterns)
     )
   ).enablePlugins(play.sbt.PlayScala)
