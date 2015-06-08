@@ -20,14 +20,16 @@ Required bits in your `build.scala(.sbt)`:
     import play.sbt.routes.RoutesKeys.routesImport
     ...
 
-    libraryDependencies += "play-iso-slick" %% "play-iso-slick" % "1.1",
+    libraryDependencies ++= Seq(
+      "play-iso-slick" %% "play-iso-slick" % "1.1"
+    )
     routesImport ++= Seq(
       "playiso.macros.MappedToBase._", "playiso.bind.Route._",
       "path.to.your.custom.types._"
     ),
     resolvers += Resolver.url(
       "play-iso remote", 
-      url("https://github.com/godenji/play-iso/tree/slick-3.0/releases/")
+      url("https://raw.githubusercontent.com/godenji/play-iso/slick-3.0/releases/")
     )(Resolver.ivyStylePatterns)
 
 

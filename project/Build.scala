@@ -14,7 +14,6 @@ object ApplicationBuild extends Build {
     ),
     libraryDependencies ++= Seq(
       "play-iso-slick" %% "play-iso-slick" % "1.1",
-      "play-iso-build-slick" %% "play-iso-build-slick" % "1.1",
       "org.scalatest" %% "scalatest" % "2.2.1" % "test",
       "org.scalatestplus" %% "play" % "1.4.0-M3" % "test",
       "com.typesafe.slick" %% "slick" % "3.0.0",
