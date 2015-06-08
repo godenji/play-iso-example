@@ -21,14 +21,16 @@ Required bits in your `build.scala(.sbt)`:
     import play.sbt.routes.RoutesKeys.routesImport
     ...
 
-    libraryDependencies += "play-iso" %% "play-iso" % "1.1",
+    libraryDependencies ++= Seq(
+      "play-iso" %% "play-iso" % "1.1"
+    )
     routesImport ++= Seq(
       "playiso.macros.MappedToBase._", "playiso.bind.Route._",
       "path.to.your.custom.types._"
     ),
     resolvers += Resolver.url(
       "play-iso remote", 
-      url("https://github.com/godenji/play-iso/releases/")
+      url("https://raw.githubusercontent.com/godenji/play-iso/master/releases/")
     )(Resolver.ivyStylePatterns)
 
 

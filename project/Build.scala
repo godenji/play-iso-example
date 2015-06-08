@@ -14,7 +14,6 @@ object ApplicationBuild extends Build {
     ),
     libraryDependencies ++= Seq(
       "play-iso" %% "play-iso" % "1.1",
-      "play-iso-build" %% "play-iso-build" % "1.1",
       "org.scalatest" %% "scalatest" % "2.2.1" % "test",
       "org.scalatestplus" %% "play" % "1.4.0-M3" % "test"
     ),
